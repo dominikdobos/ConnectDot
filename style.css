@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Press Start 2P", sans-serif;
+  color: #eee;
+  background-color: #222;
+}
+
+/*--- Welcome page ---*/
+
+.welcome_header {
+  height: 35vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 15px solid #eee;
+}
+
+#welcome {
+  font-size: 600%;
+}
+
+.lets_play_div {
+  height: 65vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top: 15px solid #eee;
+}
+
+#lets_play {
+  color: #eee;
+  text-decoration: none;
+  border: 3px solid #eee;
+  padding: 20px;
+  font-size: 300%;
+}
+
+#lets_play:hover {
+  font-size: 350%;
+}
+
+/*--- Select level page ---*/
+
+.select_level_header {
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 15px solid #eee;
+}
+
+#select_level {
+  font-size: 350%;
+}
+
+#level_selector_menu {
+  height: 80vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.back {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  color: #222;
+  background-color: #eee;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 200%;
+}
+
+.back:hover {
+  font-size: 250%;
+}
+
+.levels {
+  border: 5px solid #eee;
+  padding: 125px;
+}
+
+.levels:hover {
+  padding: 150px;
+}
