@@ -1,0 +1,213 @@
+.level_1_grid {
+  display: grid;
+  grid-template-columns: repeat(6, 0.3fr);
+  grid-template-rows: repeat(6, 0.3fr);
+  gap: 5px;
+  grid-template-areas:
+    "s1 rs1 s3 s4 s5 s6"
+    "s7 s8 s9 s10 s11 s12"
+    "s13 s14 s15 s16 s17 s18"
+    "s19 s20 s21 s22 s23 s24"
+    "s25 s26 s27 s28 rs2 s30"
+    "s31 s32 s33 s34 s35 s36";
+  background-color: #eee;
+  border: 5px solid #eee;
+}
+
+.red_1 {
+  grid-area: rs1;
+  padding: 50px;
+  background-color: rgb(170, 0, 0);
+}
+.red_2 {
+  grid-area: rs2;
+  padding: 50px;
+  background-color: rgb(170, 0, 0);
+}
+
+#yellow {
+  background-color: rgb(204, 204, 0);
+  grid-area: ys;
+  padding: 50px;
+}
+
+.s1 {
+  grid-area: s1;
+  background-color: #161616;
+  padding: 50px;
+}
+.s2 {
+  grid-area: s2;
+  background-color: #161616;
+  padding: 50px;
+}
+.s3 {
+  grid-area: s3;
+  background-color: #161616;
+  padding: 50px;
+}
+.s4 {
+  grid-area: s4;
+  background-color: #161616;
+  padding: 50px;
+}
+.s5 {
+  grid-area: s5;
+  background-color: #161616;
+  padding: 50px;
+}
+.s6 {
+  grid-area: s6;
+  background-color: #161616;
+  padding: 50px;
+}
+.s7 {
+  grid-area: s7;
+  background-color: #161616;
+  padding: 50px;
+}
+.s8 {
+  grid-area: s8;
+  background-color: #161616;
+  padding: 50px;
+}
+.s9 {
+  grid-area: s9;
+  background-color: #161616;
+  padding: 50px;
+}
+.s10 {
+  grid-area: s10;
+  background-color: #161616;
+  padding: 50px;
+}
+.s11 {
+  grid-area: s11;
+  background-color: #161616;
+  padding: 50px;
+}
+.s12 {
+  grid-area: s12;
+  background-color: #161616;
+  padding: 50px;
+}
+.s13 {
+  grid-area: s13;
+  background-color: #161616;
+  padding: 50px;
+}
+.s14 {
+  grid-area: s14;
+  background-color: #161616;
+  padding: 50px;
+}
+.s15 {
+  grid-area: s15;
+  background-color: #161616;
+  padding: 50px;
+}
+.s16 {
+  grid-area: s16;
+  background-color: #161616;
+  padding: 50px;
+}
+.s17 {
+  grid-area: s17;
+  background-color: #161616;
+  padding: 50px;
+}
+.s18 {
+  grid-area: s18;
+  background-color: #161616;
+  padding: 50px;
+}
+.s19 {
+  grid-area: s19;
+  background-color: #161616;
+  padding: 50px;
+}
+.s20 {
+  grid-area: s20;
+  background-color: #161616;
+  padding: 50px;
+}
+.s21 {
+  grid-area: s21;
+  background-color: #161616;
+  padding: 50px;
+}
+.s22 {
+  grid-area: s22;
+  background-color: #161616;
+  padding: 50px;
+}
+.s23 {
+  grid-area: s23;
+  background-color: #161616;
+  padding: 50px;
+}
+.s24 {
+  grid-area: s24;
+  background-color: #161616;
+  padding: 50px;
+}
+.s25 {
+  grid-area: s25;
+  background-color: #161616;
+  padding: 50px;
+}
+.s26 {
+  grid-area: s26;
+  background-color: #161616;
+  padding: 50px;
+}
+.s27 {
+  grid-area: s27;
+  background-color: #161616;
+  padding: 50px;
+}
+.s28 {
+  grid-area: s28;
+  background-color: #161616;
+  padding: 50px;
+}
+.s29 {
+  grid-area: s29;
+  background-color: #161616;
+  padding: 50px;
+}
+.s30 {
+  grid-area: s30;
+  background-color: #161616;
+  padding: 50px;
+}
+.s31 {
+  grid-area: s31;
+  background-color: #161616;
+  padding: 50px;
+}
+.s32 {
+  grid-area: s32;
+  background-color: #161616;
+  padding: 50px;
+}
+.s33 {
+  grid-area: s33;
+  background-color: #161616;
+  padding: 50px;
+}
+.s34 {
+  grid-area: s34;
+  background-color: #161616;
+  padding: 50px;
+}
+.s35 {
+  grid-area: s35;
+  background-color: #161616;
+  padding: 50px;
+}
+.s36 {
+  grid-area: s36;
+  background-color: #161616;
+  padding: 50px;
+}

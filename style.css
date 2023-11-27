@@ -83,10 +83,26 @@ body {
 }
 
 .levels {
-  border: 5px solid #eee;
-  padding: 125px;
+  border: 8px solid #eee;
 }
 
 .levels:hover {
   padding: 150px;
+}
+
+.kep {
+  width: 100%;
+  height: auto;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/*--- Level 1 ---*/
+
+#level_1_div {
+  height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
