@@ -35,6 +35,7 @@ body {
 }
 
 #lets_play {
+  cursor: pointer;
   color: #eee;
   text-decoration: none;
   border: 3px solid #eee;
@@ -76,6 +77,7 @@ body {
   padding: 15px;
   text-decoration: none;
   font-size: 150%;
+  cursor: pointer;
 }
 
 .back:hover {
@@ -90,6 +92,58 @@ body {
   padding: 20px;
 }
 
+/*--- Modal ---*/
+.level_completed .overlay {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+.level_completed .content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 8px solid #eee;
+  width: 50%;
+  height: 40%;
+  z-index: 2;
+  background-color: #222;
+}
+
+.level_completed .content h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  padding: 3rem 0;
+}
+
+.completed_buttons {
+  padding: 2rem 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.completed_buttons > button {
+  cursor: pointer;
+  text-decoration: none;
+  border: 3px solid #eee;
+  padding: 20px;
+  font-size: 200%;
+  font-family: "Press Start 2P", sans-serif;
+  color: #eee;
+  background-color: #222;
+}
+
+.completed_buttons > button:hover {
+  font-size: 250%;
+}
 /*--- Level 1 ---*/
 
 #level_div {
