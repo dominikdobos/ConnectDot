@@ -111,7 +111,7 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   border: 8px solid #eee;
-  width: 50%;
+  min-width: 50%;
   height: fit-content;
   z-index: 2;
   background-color: #222;
@@ -157,7 +157,6 @@ body {
 .completed_buttons > button:hover {
   background-color: white;
   color: #222;
-  border: #222;
 }
 /*--- Level 1 ---*/
 
