@@ -51,6 +51,9 @@ function individualLevel(arrayOfLvl, numOfLvl) {
   const NUMBER_OF_COLORS = countColorsInLvl(arrayOfLvl, numOfLvl);
   backButton();
   blockChange(NUMBER_OF_COLORS, arrayOfLvl, numOfLvl);
+  completedButtons(".restart_button", arrayOfLvl, numOfLvl);
+  deleteButton();
+  EVERY_COLORS_COMPLETED.splice(0, EVERY_COLORS_COMPLETED.length);
 }
 
 function countColorsInLvl(lvl) {
@@ -81,33 +84,89 @@ function completedButtons(button, arrayOfLvl, numOfLvl) {
     individualLevel(arrayOfLvl, numOfLvl);
   });
 }
+let deleteFlag = false;
+function deleteButton() {
+  const BUTTON = $(".delete_button");
+  const BLOCK = $(".level_grid > div");
+  BUTTON.on("click", function () {
+    if (!deleteFlag) {
+      deleteFlag = true;
+      BUTTON.css("background-color", "red");
+    } else {
+      deleteFlag = false;
+      BUTTON.css("background-color", "#222");
+    }
+  });
 
+  BLOCK.on("click", function (evt) {
+    if (deleteFlag) {
+      let deletedColorIndex = -1;
+      console.log("flag true");
+      for (let i = 0; i < EVERY_COLORS_COMPLETED.length; i++) {
+        if (EVERY_COLORS_COMPLETED[i].indexOf(evt.target.id) > -1) {
+          deletedColorIndex = i;
+        }
+      }
+      console.log(EVERY_COLORS_COMPLETED[deletedColorIndex]);
+      console.log(deletedColorIndex, "index");
+      if (deletedColorIndex > -1) {
+        let deletedColor = BLOCK.eq(evt.target.id).attr("class").split(" ")[1];
+        for (
+          let index = 0;
+          index < EVERY_COLORS_COMPLETED[deletedColorIndex].length;
+          index++
+        ) {
+          BLOCK.eq(
+            EVERY_COLORS_COMPLETED[deletedColorIndex][index]
+          ).removeClass(deletedColor);
+          BLOCK.eq(
+            EVERY_COLORS_COMPLETED[deletedColorIndex][index]
+          ).removeClass("completed");
+        }
+        EVERY_COLORS_COMPLETED.splice(deletedColorIndex, 1);
+      }
+    }
+  });
+}
+
+const EVERY_COLORS_COMPLETED = [];
 function blockChange(diffColorAmount, lvlArr, numOfLvl) {
   let selectedColor;
   const BLOCKS_COLORED = [];
-  const EVERY_COLORS_COMPLETED = [];
   const LVL = $(".level_grid");
+  const PAGE = $(".page");
   const BLOCK = $(".level_grid > div");
   let flag = false;
+  PAGE.on("mouseup", function () {
+    flag = false;
+    for (let index = 0; index < BLOCKS_COLORED.length; index++) {
+      console.log("leszedett szín", selectedColor);
+      BLOCK.eq(BLOCKS_COLORED[index]).removeClass(selectedColor);
+    }
+    selectedColor = undefined;
+    console.log("kint van");
+  });
   LVL.on("mouseup", function () {
     flag = false;
     selectedColor = undefined;
   });
   let starterClicked;
   BLOCK.on("mousedown", function (evt) {
-    BLOCKS_COLORED.splice(0, BLOCKS_COLORED.length);
-    flag = true;
-    const CURRENT_BLOCK_CLASSES = BLOCK.eq(evt.target.id).attr("class");
-    const CURRENT_BLOCK_CLASSES_ARR = CURRENT_BLOCK_CLASSES.split(" ");
-    if (
-      CURRENT_BLOCK_CLASSES_ARR[1] === "starting_block" &&
-      !CURRENT_BLOCK_CLASSES_ARR.includes("completed")
-    ) {
-      selectedColor =
-        BLOCK.eq(evt.target.id).attr("class").split(/\s+/)[0] + "_changed";
-      starterClicked = evt.target.id;
+    if (!deleteFlag) {
+      BLOCKS_COLORED.splice(0, BLOCKS_COLORED.length);
+      flag = true;
+      const CURRENT_BLOCK_CLASSES = BLOCK.eq(evt.target.id).attr("class");
+      const CURRENT_BLOCK_CLASSES_ARR = CURRENT_BLOCK_CLASSES.split(" ");
+      if (
+        CURRENT_BLOCK_CLASSES_ARR[1] === "starting_block" &&
+        !CURRENT_BLOCK_CLASSES_ARR.includes("completed")
+      ) {
+        selectedColor =
+          BLOCK.eq(evt.target.id).attr("class").split(/\s+/)[0] + "_changed";
+        starterClicked = evt.target.id;
+      }
+      console.log(selectedColor);
     }
-    console.log(selectedColor);
   });
   BLOCK.on("mouseover", function (evt) {
     const CURRENT_BLOCK = BLOCK.eq(evt.target.id);
@@ -174,11 +233,11 @@ function blockChange(diffColorAmount, lvlArr, numOfLvl) {
         for (let index = 0; index < BLOCKS_COLORED.length; index++) {
           ONE_COLOR_COMPLETED.push(BLOCKS_COLORED[index]);
         }
-        EVERY_COLORS_COMPLETED.push(ONE_COLOR_COMPLETED);
-        console.log("sikeres");
-        console.log(ONE_COLOR_COMPLETED);
         BLOCK.eq(starterClicked).addClass("completed");
         BLOCK.eq(evt.target.id).addClass("completed");
+        ONE_COLOR_COMPLETED.push(starterClicked);
+        ONE_COLOR_COMPLETED.push(evt.target.id);
+        EVERY_COLORS_COMPLETED.push(ONE_COLOR_COMPLETED);
         if (EVERY_COLORS_COMPLETED.length === diffColorAmount) {
           PAGE.append(levelCompleted);
           completedButtons(".restart_button", lvlArr, numOfLvl);

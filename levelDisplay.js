@@ -89,6 +89,10 @@ export function levels(lvl, numOfLvl) {
 
   txt += `
     </div>
+    <div class="game_buttons">
+        <button class="delete_button">X</button>
+        <button class="restart_button"><img src="./kepek/refresh.png" style="width:33px"></button>
+      </div>    
   </div>
   `;
 
