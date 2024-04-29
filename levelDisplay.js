@@ -54,7 +54,6 @@ export function levelCompleted() {
       <h1>Congratulations!</h1>
       <div class="completed_buttons">
         <button class="restart_button">Restart!</button>
-        
       </div>
     </div>
   </div>

@@ -112,7 +112,7 @@ body {
   transform: translate(-50%, -50%);
   border: 8px solid #eee;
   width: 50%;
-  height: 40%;
+  height: fit-content;
   z-index: 2;
   background-color: #222;
 }
@@ -124,7 +124,7 @@ body {
 }
 
 .completed_buttons {
-  padding: 2rem 0;
+  padding: 2.5rem;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -155,7 +155,9 @@ body {
 }
 
 .completed_buttons > button:hover {
-  font-size: 250%;
+  background-color: white;
+  color: #222;
+  border: #222;
 }
 /*--- Level 1 ---*/
 

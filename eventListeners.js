@@ -7,6 +7,8 @@ import {
 } from "./levelDisplay.js";
 import { LVL1, LVL2, LVL3, LVL4 } from "./levels.js";
 
+let deleteFlag = false;
+const EVERY_COLORS_COMPLETED = [];
 export const LEVEL_ARRAYS = [
   [LVL1, 1],
   [LVL2, 2],
@@ -84,7 +86,6 @@ function completedButtons(button, arrayOfLvl, numOfLvl) {
     individualLevel(arrayOfLvl, numOfLvl);
   });
 }
-let deleteFlag = false;
 function deleteButton() {
   const BUTTON = $(".delete_button");
   const BLOCK = $(".level_grid > div");
@@ -129,7 +130,6 @@ function deleteButton() {
   });
 }
 
-const EVERY_COLORS_COMPLETED = [];
 function blockChange(diffColorAmount, lvlArr, numOfLvl) {
   let selectedColor;
   const BLOCKS_COLORED = [];
