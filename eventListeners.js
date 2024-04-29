@@ -56,6 +56,7 @@ function individualLevel(arrayOfLvl, numOfLvl) {
   completedButtons(".restart_button", arrayOfLvl, numOfLvl);
   deleteButton();
   EVERY_COLORS_COMPLETED.splice(0, EVERY_COLORS_COMPLETED.length);
+  deleteFlag = false;
 }
 
 function countColorsInLvl(lvl) {
@@ -110,8 +111,8 @@ function deleteButton() {
       }
       console.log(EVERY_COLORS_COMPLETED[deletedColorIndex]);
       console.log(deletedColorIndex, "index");
-      if (deletedColorIndex > -1) {
-        let deletedColor = BLOCK.eq(evt.target.id).attr("class").split(" ")[1];
+      let deletedColor = BLOCK.eq(evt.target.id).attr("class").split(" ")[1];
+      if (deletedColorIndex > -1 && deletedColor != "starting_block") {
         for (
           let index = 0;
           index < EVERY_COLORS_COMPLETED[deletedColorIndex].length;
